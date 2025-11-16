@@ -1,0 +1,14 @@
+The database data was generated entirely from scratch using Python, without relying on external datasets. To ensure authenticity, common first and last names were compiled to create realistic employee identities, resulting in natural name combinations such as “Olivia Smith” or “James Wilson.” Employee attributes like years at company and salary were assigned randomly within plausible bounds to reflect real workplace distributions. 
+Some salary and performance rating entries were intentionally left null to simulate missing data often found in actual records. For added realism, deliberate email duplicates were included for a small subset of employees, mimicking real-world errors in data collection. This approach produces a dataset that supports practical learning experiences in handling imperfect data.
+Database Schema Overview
+The database comprises four core tables, each designed with clear roles and normalized structure:
+•	Employees captures individual employee details including contact info, tenure, and compensation. It handles missing salary and includes occasional duplicate emails as realistic anomalies.
+•	Projects stores details about company-wide initiatives, including project names and timelines.
+•	Tasks breaks down projects into discrete work items assigned to employees, capturing task names, due dates, and current status. This table enriches the schema by explicitly linking employees to their assigned responsibilities, rather than just associating them to projects anonymously.
+ 
+•	Reviews tracks yearly performance ratings for employees, employing a composite key for employee ID and review year, with controlled vocabulary for rating values. Missing ratings represent occasional lack of feedback.
+•	Foreign key constraints enforce data consistency and maintain referential integrity across tables. Check constraints ensure attribute values stay within sensible ranges, such as positive salaries and valid rating categories.
+Design Justification and Ethical Considerations
+The separation of tables reflects best practices in database normalization, avoiding redundancy and improving data clarity. The introduction of the Tasks table instead of a simple employee-project join table provides meaningful context about employee contributions and project workflow. This enriched design supports detailed analysis of workload, project progress, and employee performance.
+Data privacy was a top priority throughout. All data are synthetic and generated algorithmically, ensuring no real personal information is used. Missing and duplicate data points are intentional and purely for academic realism. For any real-world implementation, further safeguards (e.g., encryption, access control) are recommended for sensitive fields such as salary. The design’s constraints and careful data generation practices ensure data integrity and protect privacy while offering a rich, realistic environment to explore database techniques.
+
